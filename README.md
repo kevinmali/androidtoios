@@ -1,16 +1,6 @@
-# pr_1
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot_20230726_224946](https://github.com/kevinmali/androidtoios/assets/132121875/0479b83e-aef3-4a23-94a8-130fd19cc089)
+![Screenshot_20230726_224748](https://github.com/kevinmali/androidtoios/assets/132121875/bd25629b-a4bd-428b-b505-1c123b847b52)
+![Screenshot_20230726_224731](https://github.com/kevinmali/androidtoios/assets/132121875/35451ccc-aa56-449b-adf9-adad73375034)
+![Screenshot_20230726_224619](https://github.com/kevinmali/androidtoios/assets/132121875/73f58883-816f-4c7e-b5c1-a13bac0b6ab4)
+![Screenshot_20230726_224549](https://github.com/kevinmali/androidtoios/assets/132121875/314c2b25-dc39-47c7-a48c-cbb6ba5e13e0)
+![Screenshot_20230726_224536](https://github.com/kevinmali/androidtoios/assets/132121875/cccff049-bef1-4d3f-83dc-abae2ddf6375)
