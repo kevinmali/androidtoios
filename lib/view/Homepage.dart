@@ -4,9 +4,14 @@ import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../Provider/Contact_provider.dart';
 
-class Homepage extends StatelessWidget {
+class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
+  @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,15 +66,16 @@ class Homepage extends StatelessWidget {
                     //     foregroundImage: FileImage(File(Global.pic!.path)),
                     // ),
                     trailing: IconButton(
-                      onPressed: () async {
-                        launchUrl(
-                          Uri(
-                              scheme: 'tel',
-                              path:
-                                  "${ContactProvider.allContacts[index].MobileNumber}"),
-                        );
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'hidden',
+                            arguments: ContactProvider.allContacts[index]);
+                        ContactProvider.hiddenContact
+                            .add(ContactProvider.allContacts[index]);
+                        setState(() {
+                          ContactProvider.allContacts.removeAt(index);
+                        });
                       },
-                      icon: const Icon(Icons.phone),
+                      icon: const Icon(Icons.remove),
                     ),
                   ),
                 );

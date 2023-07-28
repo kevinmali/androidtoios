@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:pr_1/Provider/Contact_provider.dart';
 import 'package:pr_1/utils/global_varibal.dart';
 import 'package:pr_1/utils/model_page.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -29,20 +30,23 @@ class Details extends StatelessWidget {
                 LocalAuthentication authen = LocalAuthentication();
                 bool biometric = await authen.canCheckBiometrics;
                 bool mobile = await authen.isDeviceSupported();
-                Navigator.of(context).pushNamed('hidden');
+                Navigator.of(context).pushNamed('hidden',
+                    arguments: ContactProvider.allContacts[index]);
+                ContactProvider.hiddenContact
+                    .add(ContactProvider.allContacts[index]);
 
                 try {
                   if (biometric == true && mobile == true) {
                     bool aut = await authen.authenticate(localizedReason: "");
                     if (aut == true) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
+                        const SnackBar(
                           content: Text("Success lock "),
                         ),
                       );
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
+                        const SnackBar(
                           content: Text("Plz change a Mobile..."),
                         ),
                       );
@@ -64,7 +68,7 @@ class Details extends StatelessWidget {
                 value: 'setting',
                 child: Text("setting"),
               ),
-              PopupMenuItem(
+              const PopupMenuItem(
                 value: 'hidden',
                 child: Text("hidden_contact"),
               )
@@ -75,7 +79,7 @@ class Details extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           if (Global.pic == null)
